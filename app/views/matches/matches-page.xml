@@ -1,0 +1,24 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <GridLayout rows="*, auto">
+        <StackLayout row="0">
+            <Image src="{{ currentProfile.photos[0] }}" 
+                   class="w-full h-96" />
+            
+            <StackLayout class="p-4">
+                <Label text="{{ currentProfile.displayName }}" 
+                       class="text-2xl font-bold" />
+                <Label text="{{ currentProfile.bio }}" 
+                       class="text-gray-600" />
+            </StackLayout>
+        </StackLayout>
+        
+        <GridLayout row="1" columns="auto, *, auto" class="p-4">
+            <Button text="✗" tap="{{ onReject }}" 
+                    class="btn-danger rounded-full w-16 h-16" col="0" />
+            <Button text="⚡" tap="{{ onQuickMatch }}" 
+                    class="btn-warning rounded-full w-16 h-16" col="1" />
+            <Button text="♥" tap="{{ onLike }}" 
+                    class="btn-success rounded-full w-16 h-16" col="2" />
+        </GridLayout>
+    </GridLayout>
+</Page>

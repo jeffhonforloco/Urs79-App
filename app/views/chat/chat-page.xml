@@ -1,0 +1,44 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <GridLayout rows="auto, *, auto">
+        <!-- Header -->
+        <GridLayout row="0" columns="auto, *, auto" class="p-4 bg-white border-b">
+            <Image src="{{ matchProfile.photo }}" 
+                   class="w-10 h-10 rounded-full" 
+                   col="0" />
+            <Label text="{{ matchProfile.displayName }}" 
+                   class="text-lg font-semibold ml-2" 
+                   col="1" />
+            <Button text="⋮" 
+                    class="text-xl" 
+                    tap="{{ onMoreOptions }}" 
+                    col="2" />
+        </GridLayout>
+
+        <!-- Messages -->
+        <ListView row="1" items="{{ messages }}" class="bg-gray-100">
+            <ListView.itemTemplate>
+                <GridLayout columns="*" class="p-2">
+                    <StackLayout col="0" class="{{ isOwn ? 'ml-auto' : 'mr-auto' }}">
+                        <Label text="{{ content }}" 
+                               class="{{ isOwn ? 'bg-blue-500 text-white' : 'bg-white' }} p-3 rounded-lg" 
+                               textWrap="true" />
+                        <Label text="{{ timestamp }}" 
+                               class="text-xs text-gray-500 mt-1" />
+                    </StackLayout>
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+
+        <!-- Message Input -->
+        <GridLayout row="2" columns="*, auto" class="p-2 bg-white border-t">
+            <TextField hint="Type a message..." 
+                      text="{{ messageText }}" 
+                      class="input" 
+                      col="0" />
+            <Button text="Send" 
+                    tap="{{ onSendMessage }}" 
+                    class="btn-primary" 
+                    col="1" />
+        </GridLayout>
+    </GridLayout>
+</Page>

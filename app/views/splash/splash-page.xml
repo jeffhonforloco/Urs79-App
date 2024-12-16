@@ -1,0 +1,10 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="bg-black">
+    <GridLayout>
+        <StackLayout class="center p-4">
+            <Image src="~/assets/images/logo.png" width="200" height="200" class="mb-4" />
+            <Label text="URS79" class="text-4xl text-white font-bold text-center" />
+            <Label text="CONNECTIVE" class="text-xl text-white text-center" />
+            <ActivityIndicator busy="true" color="white" class="mt-8" />
+        </StackLayout>
+    </GridLayout>
+</Page>

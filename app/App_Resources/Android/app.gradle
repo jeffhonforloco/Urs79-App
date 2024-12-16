@@ -1,0 +1,26 @@
+android {
+  defaultConfig {
+    applicationId "com.urs79.app"
+    minSdkVersion 23
+    targetSdkVersion 33
+    versionCode 1
+    versionName "1.0"
+    multiDexEnabled true
+  }
+
+  aaptOptions {
+    cruncherEnabled = false
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled true
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+}

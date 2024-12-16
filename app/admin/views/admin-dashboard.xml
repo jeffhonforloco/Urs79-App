@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="URS79 Admin Dashboard" class="action-bar">
+        <NavigationButton visibility="collapsed" />
+        <ActionItem ios.position="right" android.position="right" tap="{{ onLogout }}">
+            <Label text="Logout" class="action-item" />
+        </ActionItem>
+    </ActionBar>
+
+    <GridLayout rows="auto, *">
+        <!-- Stats Overview -->
+        <GridLayout row="0" columns="*, *, *" class="stats-container p-4">
+            <StackLayout col="0" class="stat-box">
+                <Label text="{{ totalUsers }}" class="stat-number"/>
+                <Label text="Total Users" class="stat-label"/>
+            </StackLayout>
+            <StackLayout col="1" class="stat-box">
+                <Label text="{{ activeMatches }}" class="stat-number"/>
+                <Label text="Active Matches" class="stat-label"/>
+            </StackLayout>
+            <StackLayout col="2" class="stat-box">
+                <Label text="{{ pendingReports }}" class="stat-number"/>
+                <Label text="Pending Reports" class="stat-label"/>
+            </StackLayout>
+        </GridLayout>
+
+        <!-- Main Menu -->
+        <ScrollView row="1">
+            <StackLayout class="p-4">
+                <Button text="User Management" tap="{{ onUserManagement }}" class="btn-primary m-b-10"/>
+                <Button text="Content Moderation" tap="{{ onModeration }}" class="btn-primary m-b-10"/>
+                <Button text="Analytics & Reports" tap="{{ onAnalytics }}" class="btn-primary m-b-10"/>
+                <Button text="System Settings" tap="{{ onSettings }}" class="btn-primary m-b-10"/>
+            </StackLayout>
+        </ScrollView>
+    </GridLayout>
+</Page>

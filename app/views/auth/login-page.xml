@@ -1,0 +1,31 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Image src="~/assets/images/logo.png" width="120" height="120" class="mb-4" />
+            <Label text="Welcome Back" class="text-3xl font-bold mb-8 text-center" />
+            
+            <TextField hint="Email or Phone Number" 
+                      text="{{ loginInput }}" 
+                      class="input mb-4 p-4 rounded-lg" 
+                      autocorrect="false"
+                      autocapitalizationType="none" />
+            
+            <TextField hint="Password" 
+                      text="{{ password }}" 
+                      secure="true" 
+                      class="input mb-6 p-4 rounded-lg" />
+            
+            <Button text="Login" 
+                    tap="{{ onLogin }}" 
+                    class="btn-primary mb-4 rounded-full" />
+            
+            <Button text="Sign Up" 
+                    tap="{{ onSignUpTap }}" 
+                    class="btn-secondary rounded-full" />
+                    
+            <Label text="Forgot Password?" 
+                   tap="{{ onForgotPassword }}"
+                   class="text-center text-blue-500 mt-4" />
+        </StackLayout>
+    </ScrollView>
+</Page>

@@ -1,0 +1,30 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Image src="{{ profilePhoto }}" class="w-32 h-32 rounded-full mb-4" />
+            
+            <Button text="Change Photo" tap="{{ onChangePhoto }}" class="mb-4" />
+            
+            <TextField hint="Display Name" 
+                      text="{{ displayName }}" 
+                      class="input mb-4" />
+            
+            <TextView hint="Bio" 
+                     text="{{ bio }}" 
+                     class="input mb-4 h-32" />
+            
+            <Label text="Preferences" class="text-lg font-bold mb-2" />
+            
+            <GridLayout rows="auto" columns="*, *" class="mb-4">
+                <Label text="Age Range" col="0" />
+                <RangeSlider value="{{ ageRange }}" 
+                            min="18" max="99" 
+                            col="1" />
+            </GridLayout>
+            
+            <Button text="Save Profile" 
+                    tap="{{ onSaveProfile }}" 
+                    class="btn-primary" />
+        </StackLayout>
+    </ScrollView>
+</Page>
